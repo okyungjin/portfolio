@@ -1,5 +1,10 @@
 'use strict';
 
+const scrollIntoViewBySelector = (selector) => {
+  selector.scrollIntoView({ behavior: 'smooth' });
+};
+
+
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 const makeNavbarTransparentWhenTop = () => {
@@ -17,7 +22,7 @@ const scrollToContent = (event) => {
   if (!link) return;
   
   const elemToScroll = document.querySelector(link);
-  elemToScroll.scrollIntoView({ behavior: 'smooth' });
+  scrollIntoViewBySelector(elemToScroll);
 };
 navbarMenu.addEventListener('click', scrollToContent);
 
@@ -25,6 +30,6 @@ navbarMenu.addEventListener('click', scrollToContent);
 const homeContanctBtn = document.querySelector('.home__contact');
 const scrollToContactElem = () => {
   const contactElem = document.querySelector('#contact');
-  contactElem.scrollIntoView({ behavior: 'smooth' });
+  scrollIntoViewBySelector(contactElem);
 };
 homeContanctBtn.addEventListener('click', scrollToContactElem);
