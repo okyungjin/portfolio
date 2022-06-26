@@ -2,7 +2,6 @@
 
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
-
 const makeNavbarTransparentWhenTop = () => {
   if (window.scrollY > navbarHeight)
     navbar.classList.add('navbar--dark');
@@ -23,3 +22,9 @@ const scrollToContent = (event) => {
 navbarMenu.addEventListener('click', scrollToContent);
 
 
+const homeContanctBtn = document.querySelector('.home__contact');
+const scrollToContactElem = () => {
+  const contactElem = document.querySelector('#contact');
+  contactElem.scrollIntoView({ behavior: 'smooth' });
+};
+homeContanctBtn.addEventListener('click', scrollToContactElem);
