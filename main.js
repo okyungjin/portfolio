@@ -23,11 +23,18 @@ const navbarMenu = document.querySelector('.navbar__menu');
 const scrollToContent = (event) => {
   const link = event.target.dataset.link;
   if (!link) return;
-  
+  navbarMenu.classList.remove('open');
   const elemToScroll = document.querySelector(link);
   scrollIntoViewBySelector(elemToScroll);
 };
 navbarMenu.addEventListener('click', scrollToContent);
+
+
+// Navbar toggle button for small scrren
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', (event) => {
+  navbarMenu.classList.toggle('open');
+});
 
 
 // Scroll to contact when clicking contact button in home
@@ -72,7 +79,7 @@ workBtnContainer.addEventListener('click', (event) => {
   active.classList.remove('selected');
   const target = event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
   target.classList.add('selected');
-  
+
   projectContainer.classList.add('animation-out');
 
   const ALL_PROJECTS = '*';

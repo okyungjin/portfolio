@@ -110,7 +110,7 @@ p {
 
 #navbar.navbar--dark {
   background-color: var(--color-blue);
-  padding: 8px 16px;
+  padding: 16px;
 }
 
 .navbar__menu {
@@ -519,6 +519,10 @@ p {
     text-align: center;
     width: 100%;
     display: none;
+  }
+
+  .navbar__menu.open {
+    display: block;
   }
 
   .about__majors {
