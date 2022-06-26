@@ -67,6 +67,12 @@ workBtnContainer.addEventListener('click', (event) => {
   const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter;
   if (!filter) return;
 
+  // Remove selection from the previous item and select the 
+  const active = document.querySelector('.category__btn.selected');
+  active.classList.remove('selected');
+  const target = event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+  target.classList.add('selected');
+  
   projectContainer.classList.add('animation-out');
 
   const ALL_PROJECTS = '*';
@@ -77,7 +83,7 @@ workBtnContainer.addEventListener('click', (event) => {
       else
         project.classList.add('invisible');
     });
-    
+
     projectContainer.classList.remove('animation-out');
   }, 300);
 });
