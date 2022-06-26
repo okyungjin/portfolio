@@ -13,12 +13,13 @@ document.addEventListener('scroll', makeNavbarTransparentWhenTop)
 
 
 const navbarMenu = document.querySelector('.navbar__menu');
-const test = (event) => {
+const scrollToContent = (event) => {
   const link = event.target.dataset.link;
   if (!link) return;
   
   const elemToScroll = document.querySelector(link);
   elemToScroll.scrollIntoView({ behavior: 'smooth' });
 };
-navbarMenu.addEventListener('click', test);
+navbarMenu.addEventListener('click', scrollToContent);
+
 
